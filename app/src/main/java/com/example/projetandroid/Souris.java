@@ -6,6 +6,14 @@ public class Souris extends Materiel{
     private int nbrBtn;
     private boolean rgb;
 
+    public Souris(String idMat, String marque, int prix, String couleur, String modele, String usage, boolean filaire, int dpi, int nbrBtn, boolean rgb) {
+        super(idMat, marque, prix, couleur, modele, usage);
+        this.filaire = filaire;
+        this.dpi = dpi;
+        this.nbrBtn = nbrBtn;
+        this.rgb = rgb;
+    }
+
     public boolean isFilaire() {
         return filaire;
     }
@@ -38,10 +46,5 @@ public class Souris extends Materiel{
         this.rgb = rgb;
     }
 
-    public Souris(boolean filaire, int nbrBtn, int dpi, boolean rgb) {
-        this.filaire = filaire;
-        this.nbrBtn = nbrBtn;
-        this.dpi = dpi;
-        this.rgb = rgb;
-    }
+
 }

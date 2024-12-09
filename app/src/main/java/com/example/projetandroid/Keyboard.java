@@ -7,6 +7,14 @@ public class Keyboard extends Materiel{
     private boolean mecanique;
     private boolean filaire;
 
+    public Keyboard(String idMat, String marque, int prix, String couleur, String modele, String usage, String type, boolean rgb, boolean tkl, boolean mecanique, boolean filaire) {
+        super(idMat, marque, prix, couleur, modele, usage);
+        this.type = type;
+        this.rgb = rgb;
+        this.tkl = tkl;
+        this.mecanique = mecanique;
+        this.filaire = filaire;
+    }
 
     public String getType() {
         return type;
@@ -48,11 +56,5 @@ public class Keyboard extends Materiel{
         this.filaire = filaire;
     }
 
-    public Keyboard(String type, boolean rgb, boolean tkl, boolean mecanique, boolean filaire) {
-        this.type = type;
-        this.rgb = rgb;
-        this.tkl = tkl;
-        this.mecanique = mecanique;
-        this.filaire = filaire;
-    }
+
 }
