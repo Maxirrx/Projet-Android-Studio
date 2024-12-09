@@ -5,8 +5,8 @@ public class Materiel {
     private  String marque;
     private int prix;
     private String modele;
-    private String Couleur;
-    private String Usage;
+    private String couleur;
+    private String usage;
 
 
     public String getIdMat() {
@@ -42,27 +42,27 @@ public class Materiel {
     }
 
     public String getCouleur() {
-        return Couleur;
+        return couleur;
     }
 
     public void setCouleur(String couleur) {
-        Couleur = couleur;
+        couleur = couleur;
     }
 
     public String getUsage() {
-        return Usage;
+        return usage;
     }
 
     public void setUsage(String usage) {
-        Usage = usage;
+        usage = usage;
     }
 
-    public Materiel(String idMat, String marque, int prix, String couleur, String modele, String usage) {
+    public Materiel() {
         this.idMat = idMat;
         this.marque = marque;
         this.prix = prix;
-        Couleur = couleur;
+        this.couleur = couleur;
         this.modele = modele;
-        Usage = usage;
+        this.usage = usage;
     }
 }
