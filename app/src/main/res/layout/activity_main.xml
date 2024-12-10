@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewtitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="112dp"
+        android:text="@string/titre"
+        android:textSize="60px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewbvn" />
+
+    <EditText
+        android:id="@+id/editTextnom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="@string/log"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/editTextmdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewtitre"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewbvn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="180dp"
+        android:text="@string/bvn"
+        android:textSize="90px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextmdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="80dp"
+        android:ems="10"
+        android:hint="@string/mdp"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/buttonconnexion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonconnexion"
+        android:layout_width="407dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="160dp"
+        android:text="@string/btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

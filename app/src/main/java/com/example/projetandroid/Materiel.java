@@ -1,6 +1,7 @@
 package com.example.projetandroid;
 
 public class Materiel {
+
     private String idMat;
     private  String marque;
     private int prix;
