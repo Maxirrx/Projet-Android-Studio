@@ -13,6 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,21 +51,28 @@ public class MainActivity extends AppCompatActivity {
         boolean controleB = false;
         for (Utilisateur utilisateur : mesUtilisateurs) {
             if (utilisateur.getLogin().equals(login) && utilisateur.getMdp().equals(mdp)) {
-                Toast.makeText(MainActivity.this, "Mot de passe correct : Connexion en cour...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Mot de passe correct !", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, ListeMateriel.class);
                 startActivity(intent);
                 controleB = true;
+                break;
             } else {
                 Toast.makeText(MainActivity.this, "Mot de passe incorrect ! ", Toast.LENGTH_SHORT).show();
                 controleB = false;
             }
+
         }
         return controleB;
     }
-
-
-
-
-
+private void initMateriel(){
+    Ecran ecran1 = new Ecran(1,"Samsung",200,"noire","Odyssey G5","Gaming","32 pouces",144,10,true,"2560 x 1440");
+    Ecran ecran2 = new Ecran(2,"Samsung",300,"bleu","Odyssey G6","Gaming","34 pouces",240,1,true,"2560 x 1660");
+    Keyboard clavier1 = new Keyboard(3,"razer",120,"deathtalker","noire","gaming","azerty",true,true,true,false);
+    Keyboard clavier2 = new Keyboard(4,"logitech",40,"K650","noire","clavier de bureau","qwerty",false,false,false,true);
+    Souris souris1 = new Souris(5,"logitech",65,"M185","noire","souris de bureau",true,800,0,false);
+    Souris souris2 = new Souris(6,"razer",100,"naga","noire et rouge","gaming",false,1600,9,true);
+    PC pc1 = new PC(7,"alienware",1000,"m16 R2","blanc","gaming",false,"nvidia intel core i9",16,"geforce rtx 4070 ti"," Gigabite b760",2,"Windows 11");
+    PC pc2 = new PC(8,"hp",600,"PavilionPlus 14-ey0018nf","gris","programmation et bureautique",false,"nvidia intel core i7",16,"rtx 1080","gigabite a50",1,"Windows");
+}
 
 }
