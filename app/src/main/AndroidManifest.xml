@@ -24,7 +24,13 @@
             </intent-filter>
 
         </activity>
+
+        <activity
+            android:name="DetailMatos">
+        </activity>
+
         <activity android:name=".ListeMateriel"> </activity>
+
     </application>
 
 </manifest>
