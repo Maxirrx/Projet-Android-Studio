@@ -51,6 +51,7 @@ public class DetailMatos extends AppCompatActivity {
         marque1 = (android.widget.TextView) findViewById(R.id.marque1);
         btnmenu = (android.widget.Button) findViewById(R.id.btnmenu);
         image = (android.widget.ImageView) findViewById(R.id.image);
+        if ()
         if(Souris){
             item1.setText("Filaire");
             item2.setText("DPI");
