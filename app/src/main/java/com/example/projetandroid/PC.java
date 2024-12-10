@@ -9,6 +9,18 @@ public class PC extends Materiel{
     private int stockage;
     private String os;
 
+
+    public PC(String idMat, String marque, int prix, String couleur, String modele, String usage, boolean portabilite, String processeur, int ram, String cartegraphique, String cartemere, int stockage, String os) {
+        super(idMat, marque, prix, couleur, modele, usage);
+        this.portabilite = portabilite;
+        this.processeur = processeur;
+        this.ram = ram;
+        this.cartegraphique = cartegraphique;
+        this.cartemere = cartemere;
+        this.stockage = stockage;
+        this.os = os;
+    }
+
     public boolean isPortabilite() {
         return portabilite;
     }
@@ -65,13 +77,5 @@ public class PC extends Materiel{
         this.os = os;
     }
 
-    public PC(boolean portabilite, String processeur, int ram, String cartegraphique, int stockage, String cartemere, String os) {
-        this.portabilite = portabilite;
-        this.processeur = processeur;
-        this.ram = ram;
-        this.cartegraphique = cartegraphique;
-        this.stockage = stockage;
-        this.cartemere = cartemere;
-        this.os = os;
-    }
+
 }

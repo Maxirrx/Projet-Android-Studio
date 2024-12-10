@@ -1,12 +1,12 @@
 package com.example.projetandroid;
 
 public class Materiel {
-    private String idMat;
-    private  String marque;
-    private int prix;
-    private String modele;
-    private String Couleur;
-    private String Usage;
+    protected String idMat;
+    protected   String marque;
+    protected int prix;
+    protected String modele;
+    protected String Couleur;
+    protected String Usage;
 
 
     public String getIdMat() {
