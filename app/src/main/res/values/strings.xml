@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Projet android</string>
+    <string name="bvn">Bienvenue</string>
+    <string name="titre">Veuillez vous connecter</string>
+    <string name="log">login</string>
+    <string name="mdp">mot de passe</string>
+    <string name="btn">Se connecter</string>
+    <string name="titreliste">Liste de vos articles</string>
+    <string name="btnliste">Ajouter un article</string>
+
+    <string name="titreAjout">Ajouter un article</string>
+    <string name="btnajout">Ajouter un article</string>
 </resources>
