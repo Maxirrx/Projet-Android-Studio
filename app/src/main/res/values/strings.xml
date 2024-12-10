@@ -5,9 +5,9 @@
     <string name="log">login</string>
     <string name="mdp">mot de passe</string>
     <string name="btn">Se connecter</string>
-    <string name="titreliste">Liste de vos articles</string>
-    <string name="btnliste">Ajouter un article</string>
+    <string name="titreliste">Liste de nos matériels</string>
+    <string name="btnliste">Ajouter un matériel</string>
 
-    <string name="titreAjout">Ajouter un article</string>
-    <string name="btnajout">Ajouter un article</string>
+    <string name="titreAjout">Ajouter un matériel</string>
+    <string name="btnajout">Ajouter un matériel</string>
 </resources>

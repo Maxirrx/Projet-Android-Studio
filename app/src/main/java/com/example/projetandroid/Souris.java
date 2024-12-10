@@ -6,8 +6,8 @@ public class Souris extends Materiel{
     private int nbrBtn;
     private boolean rgb;
 
-    public Souris(String idMat, String marque, int prix, String couleur, String modele, String usage, boolean filaire, int dpi, int nbrBtn, boolean rgb) {
-        super(idMat, marque, prix, couleur, modele, usage);
+    public Souris(int idMat, String marque, int prix, String modele, String couleur, String usage, boolean filaire, int dpi, int nbrBtn, boolean rgb) {
+        super(idMat, marque, prix, modele, couleur, usage);
         this.filaire = filaire;
         this.dpi = dpi;
         this.nbrBtn = nbrBtn;

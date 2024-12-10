@@ -7,8 +7,8 @@ public class Keyboard extends Materiel{
     private boolean mecanique;
     private boolean filaire;
 
-    public Keyboard(String idMat, String marque, int prix, String couleur, String modele, String usage, String type, boolean rgb, boolean tkl, boolean mecanique, boolean filaire) {
-        super(idMat, marque, prix, couleur, modele, usage);
+    public Keyboard(int idMat, String marque, int prix, String modele, String couleur, String usage, String type, boolean rgb, boolean tkl, boolean mecanique, boolean filaire) {
+        super(idMat, marque, prix, modele, couleur, usage);
         this.type = type;
         this.rgb = rgb;
         this.tkl = tkl;

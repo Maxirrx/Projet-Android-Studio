@@ -7,8 +7,8 @@ public class Ecran extends Materiel{
     private boolean incurve;
     private String resolution;
 
-    public Ecran(String idMat, String marque, int prix, String couleur, String modele, String usage, String taille, int frequence, int latence, boolean incurve, String resolution) {
-        super(idMat, marque, prix, couleur, modele, usage);
+    public Ecran(int idMat, String marque, int prix, String modele, String couleur, String usage, String taille, int frequence, int latence, boolean incurve, String resolution) {
+        super(idMat, marque, prix, modele, couleur, usage);
         this.taille = taille;
         this.frequence = frequence;
         this.latence = latence;
