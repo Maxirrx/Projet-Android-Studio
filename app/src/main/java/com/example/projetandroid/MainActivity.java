@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
 
         initUser();
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 String password = edtPassword.getText().toString();
                 controle(login, password);
             }
+
         });
     }
     private void initUser() {

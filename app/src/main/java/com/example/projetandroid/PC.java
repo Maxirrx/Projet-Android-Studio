@@ -5,7 +5,6 @@ public class PC extends Materiel{
     private String processeur;
     private int ram;
     private String cartegraphique;
-    private String cartemere;
     private int stockage;
     private String os;
 
@@ -53,14 +52,6 @@ public class PC extends Materiel{
         this.cartegraphique = cartegraphique;
     }
 
-    public String getCartemere() {
-        return cartemere;
-    }
-
-    public void setCartemere(String cartemere) {
-        this.cartemere = cartemere;
-    }
-
     public int getStockage() {
         return stockage;
     }
@@ -78,4 +69,12 @@ public class PC extends Materiel{
     }
 
 
+    public PC(boolean portabilite, String processeur, int ram, String cartegraphique, int stockage, String os) {
+        this.portabilite = portabilite;
+        this.processeur = processeur;
+        this.ram = ram;
+        this.cartegraphique = cartegraphique;
+        this.stockage = stockage;
+        this.os = os;
+    }
 }

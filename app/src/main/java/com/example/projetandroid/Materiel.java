@@ -1,12 +1,15 @@
 package com.example.projetandroid;
 
 public class Materiel {
-    protected int idMat;
-    protected  String marque;
-    protected int prix;
-    protected String modele;
-    protected String Couleur;
-    protected String Usage;
+
+
+    private String idMat;
+    private  String marque;
+    private int prix;
+    private String modele;
+    private String couleur;
+    private String usage;
+
 
     public Materiel(int idMat, String marque, int prix, String modele, String couleur, String usage) {
         this.idMat = idMat;
@@ -50,18 +53,28 @@ public class Materiel {
     }
 
     public String getCouleur() {
-        return Couleur;
+        return couleur;
     }
 
     public void setCouleur(String couleur) {
-        Couleur = couleur;
+        couleur = couleur;
     }
 
     public String getUsage() {
-        return Usage;
+        return usage;
     }
 
     public void setUsage(String usage) {
-        Usage = usage;
+        usage = usage;
     }
+
+    public Materiel() {
+        this.idMat = idMat;
+        this.marque = marque;
+        this.prix = prix;
+        this.couleur = couleur;
+        this.modele = modele;
+        this.usage = usage;
+    }
+
 }
