@@ -270,7 +270,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="673dp" />
+        app:layout_constraintTop_toBottomOf="@+id/item5" />
 
     <TextView
         android:id="@+id/item61"
@@ -283,6 +283,4 @@
         app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item51" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
