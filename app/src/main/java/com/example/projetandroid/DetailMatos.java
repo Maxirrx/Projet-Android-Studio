@@ -51,5 +51,30 @@ public class DetailMatos extends AppCompatActivity {
         marque1 = (android.widget.TextView) findViewById(R.id.marque1);
         btnmenu = (android.widget.Button) findViewById(R.id.btnmenu);
         image = (android.widget.ImageView) findViewById(R.id.image);
+        if(Souris){
+            item1.setText("Filaire");
+            item2.setText("DPI");
+            item3.setText("Nombre de bouton");
+            item4.setText("RGB");
+        } else if (Keyboard) {
+            item1.setText("Langue du clavier");
+            item2.setText("RGB");
+            item3.setText("TKL");
+            item4.setText("Mecanique");
+            item5.setText("Filaire");
+        } else if (Ecran) {
+            item1.setText("Taille d'écran");
+            item2.setText("Fréquence en HZ");
+            item3.setText("Latence de l'écran");
+            item4.setText("Incurvé");
+            item5.setText("Résolution");
+        } else if (PC) {
+            item1.setText("Portable");
+            item1.setText("Processeur");
+            item1.setText("Ram");
+            item1.setText("Carte graphique");
+            item1.setText("Stockage");
+            item1.setText("OS");
+        }
     }
 }
