@@ -15,7 +15,6 @@ public class PC extends Materiel{
         this.processeur = processeur;
         this.ram = ram;
         this.cartegraphique = cartegraphique;
-        this.cartemere = cartemere;
         this.stockage = stockage;
         this.os = os;
     }
@@ -68,13 +67,4 @@ public class PC extends Materiel{
         this.os = os;
     }
 
-
-    public PC(boolean portabilite, String processeur, int ram, String cartegraphique, int stockage, String os) {
-        this.portabilite = portabilite;
-        this.processeur = processeur;
-        this.ram = ram;
-        this.cartegraphique = cartegraphique;
-        this.stockage = stockage;
-        this.os = os;
-    }
 }

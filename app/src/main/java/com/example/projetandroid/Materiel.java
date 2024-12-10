@@ -58,12 +58,12 @@ public class Materiel {
         usage = usage;
     }
 
-    public Materiel() {
+    public Materiel(String idMat, String marque, int prix, String modele, String couleur, String usage) {
         this.idMat = idMat;
         this.marque = marque;
         this.prix = prix;
-        this.couleur = couleur;
         this.modele = modele;
+        this.couleur = couleur;
         this.usage = usage;
     }
 }
