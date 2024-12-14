@@ -16,10 +16,16 @@ import androidx.core.view.WindowInsetsCompat;
 import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Utilisateur> mesUtilisateurs = new ArrayList<>();
+    private EditText edtLogin;
+    private EditText edtPassword;
+    private Button buttonConnexion;
+    private ArrayList<Materiel> Materiels;
+    private ArrayList<Utilisateur> mesUtilisateurs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initUser();
-        EditText edtLogin = findViewById(R.id.editTextnom);
-        EditText edtPassword = findViewById(R.id.editTextmdp);
-        Button buttonConnexion = findViewById(R.id.buttonconnexion);
+        edtLogin = (EditText)findViewById(R.id.editTextnom);
+        edtPassword = (EditText) findViewById(R.id.editTextmdp);
+        buttonConnexion = (Button) findViewById(R.id.buttonconnexion);
 
         buttonConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +45,17 @@ public class MainActivity extends AppCompatActivity {
                 String login = edtLogin.getText().toString();
                 String password = edtPassword.getText().toString();
                 controle(login, password);
+                initMateriel();
+                persister();
             }
 
         });
     }
     private void initUser() {
-        mesUtilisateurs.add(new Utilisateur("faible", "max"));
-        mesUtilisateurs.add(new Utilisateur("fort", "jules"));
+        mesUtilisateurs.add(new Utilisateur("faible", "maxetwissem"));
+        mesUtilisateurs.add(new Utilisateur("fort", "julesyann"));
+        mesUtilisateurs.add(new Utilisateur("root", "root"));
+
     }
     private boolean controle(String login, String mdp) {
         boolean controleB = false;
@@ -73,6 +83,20 @@ private void initMateriel(){
     Souris souris2 = new Souris(6,"razer",100,"naga","noire et rouge","gaming",false,1600,9,true);
     PC pc1 = new PC(7,"alienware",1000,"m16 R2","blanc","gaming",false,"nvidia intel core i9",16,"geforce rtx 4070 ti"," Gigabite b760",2,"Windows 11");
     PC pc2 = new PC(8,"hp",600,"PavilionPlus 14-ey0018nf","gris","programmation et bureautique",false,"nvidia intel core i7",16,"rtx 1080","gigabite a50",1,"Windows");
-}
+    Materiels = new ArrayList<>();
+    Materiels.add(ecran1);
+    Materiels.add(ecran2);
+    Materiels.add(clavier1);
+    Materiels.add(clavier2);
+    Materiels.add(souris1);
+    Materiels.add(souris2);
+    Materiels.add(pc1);
+    Materiels.add(pc2);
+    }
 
+private void persister(){
+        Intent intent = new Intent(MainActivity.this, ListeMateriel.class);
+        intent.putExtra("collection", Materiels);
+        startActivity(intent);
+    }
 }
