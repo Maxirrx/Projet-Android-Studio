@@ -1,6 +1,8 @@
 package com.example.projetandroid;
 
-public class Ecran extends Materiel{
+import java.io.Serializable;
+
+public class Ecran extends Materiel implements Serializable {
     private String taille;
     private int frequence;
     private int latence;
@@ -56,5 +58,20 @@ public class Ecran extends Materiel{
         this.resolution = resolution;
     }
 
-
+    @Override
+    public String toString() {
+        return "Ecran{" +
+                ", cequecest='" + getCequecest() + '\'' +
+                ", marque='" + getMarque() + '\'' +
+                ", prix=" + getPrix() +
+                ", modele='" + getModele() + '\'' +
+                ", couleur='" + getCouleur() + '\'' +
+                ", usage='" + getUsage() + '\'' +
+                "taille='" + taille + '\'' +
+                ", frequence=" + frequence +
+                ", latence=" + latence +
+                ", incurve=" + incurve +
+                ", resolution='" + resolution + '\'' +
+                '}';
+    }
 }

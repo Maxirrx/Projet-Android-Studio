@@ -1,6 +1,8 @@
 package com.example.projetandroid;
 
-public class Souris extends Materiel{
+import java.io.Serializable;
+
+public class Souris extends Materiel implements Serializable {
     private boolean filaire;
     private int dpi;
     private int nbrBtn;
@@ -47,5 +49,19 @@ public class Souris extends Materiel{
         this.rgb = rgb;
     }
 
-
+    @Override
+    public String toString() {
+        return "Souris{" +
+                ", cequecest='" + getCequecest() + '\'' +
+                ", marque='" + getMarque() + '\'' +
+                ", prix=" + getPrix() +
+                ", modele='" + getModele() + '\'' +
+                ", couleur='" + getCouleur() + '\'' +
+                ", usage='" + getUsage() + '\'' +
+                "filaire=" + filaire +
+                ", dpi=" + dpi +
+                ", nbrBtn=" + nbrBtn +
+                ", rgb=" + rgb +
+                '}';
+    }
 }

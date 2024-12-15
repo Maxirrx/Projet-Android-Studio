@@ -1,6 +1,8 @@
 package com.example.projetandroid;
 
-public class PC extends Materiel{
+import java.io.Serializable;
+
+public class PC extends Materiel implements Serializable {
     private boolean portabilite;
     private String processeur;
     private int ram;
@@ -67,4 +69,21 @@ public class PC extends Materiel{
         this.os = os;
     }
 
+    @Override
+    public String toString() {
+        return "PC{" +
+                ", cequecest='" + getCequecest() + '\'' +
+                ", marque='" + getMarque() + '\'' +
+                ", prix=" + getPrix() +
+                ", modele='" + getModele() + '\'' +
+                ", couleur='" + getCouleur() + '\'' +
+                ", usage='" + getUsage() + '\'' +
+                "portabilite=" + portabilite +
+                ", processeur='" + processeur + '\'' +
+                ", ram=" + ram +
+                ", cartegraphique='" + cartegraphique + '\'' +
+                ", stockage=" + stockage +
+                ", os='" + os + '\'' +
+                '}';
+    }
 }

@@ -13,9 +13,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -30,7 +32,9 @@ public class AjoutMateriel extends AppCompatActivity {
     private List<PC> PCs;
     private List<Souris> Souriss;
     private List<Keyboard> Keyboards;
+
     private List<?> sousliste;
+
 
     private Spinner spinnerMateriel;
     private TextView item1;
@@ -87,16 +91,46 @@ public class AjoutMateriel extends AppCompatActivity {
         spinnerMateriel = (Spinner) findViewById(R.id.spinnerMateriel);
 
         if(getIntent().getSerializableExtra("collection2")==null){
-            Type = new ArrayList<Materiel>();
+            Type = new ArrayList<Objects>();
         }else{
             Type = (ArrayList<?>) getIntent().getSerializableExtra("collection2");
             List<String> typedetruc = new ArrayList<>();
             for (int i = 0; i < Type.size(); i++) {
-                List<?> sousliste = (List<?>) Type.get(i);
+                sousliste = (List<?>) Type.get(i);
+                Log.d("geule", "initialisation: "+ sousliste.get(0));
                 for(int j = 0; j < sousliste.size(); j++){
                     Materiel matos = (Materiel) sousliste.get(j);
                     String typesolo = matos.getCequecest();
                     typedetruc.add(typesolo);
+                    if (matos instanceof Ecran) {
+                        if (Ecrans == null) {
+                            Ecrans = new ArrayList<>();
+                            Ecrans.add((Ecran) matos);
+                        }else {
+                            Ecrans.add((Ecran) matos);
+                        }
+                    } else if (matos instanceof Souris) {
+                        if (Souriss == null) {
+                            Souriss = new ArrayList<>();
+                            Souriss.add((Souris) matos);
+                        }else {
+                            Souriss.add((Souris) matos);
+                        }
+                    }else if (matos instanceof Keyboard) {
+                        if (Keyboards == null) {
+                            Keyboards = new ArrayList<>();
+                            Keyboards.add((Keyboard) matos);
+                        }else {
+                            Keyboards.add((Keyboard) matos);
+                        }
+                    }else if (matos instanceof PC) {
+                        if (PCs == null) {
+                            PCs = new ArrayList<>();
+                            PCs.add((PC) matos);
+                        }else {
+                            PCs.add((PC) matos);
+                        }
+                    }
                 }
             }
 
@@ -126,9 +160,12 @@ public class AjoutMateriel extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             if (verif() == true){
-                                Ecrans.add (new Ecran(1,"Samsung",200,"Odyssey G5","noir","Gaming","Ecran",144,"32 pouces",10,true,"2560 x 1440"));
-                                sousliste.get(typematos.indexOf(materielSelectionne).add(Ecrans);
+                                Ecrans.add (new Ecran(1,  marque1.getText().toString(), Integer.parseInt(prix1.getText().toString()), modele1.getText().toString(), couleur1.getText().toString(),  usage1.getText().toString(), "Ecran", Integer.parseInt(item21.getText().toString()), item11.getText().toString(), Integer.parseInt(item31.getText().toString()), true, item51.getText().toString()));
+                                Log.d("TAG", "onClick: " + Ecrans);
+
                             }
+                            poursuivre();
+
                         }
                     });
 
@@ -139,6 +176,17 @@ public class AjoutMateriel extends AppCompatActivity {
                     item4.setText("Mecanique" );
                     item5.setText("Filaire");
                     item6.setText("");
+
+                    btnadd.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (verif() == true){
+                                Keyboards.add (new Keyboard(1,  marque1.getText().toString(), Integer.parseInt(prix1.getText().toString()), modele1.getText().toString(), couleur1.getText().toString(),  usage1.getText().toString(), "Keyboard", item21.getText().toString(),Boolean.parseBoolean( item11.getText().toString()), Boolean.parseBoolean(item31.getText().toString()), Boolean.parseBoolean(item41.getText().toString()), Boolean.parseBoolean(item51.getText().toString())));
+
+                            }
+                        }
+                    });
+
                 } else if (materielSelectionne.equals("PC")) {
                     item1.setText("Portabilité");
                     item2.setText("Processeur");
@@ -146,6 +194,16 @@ public class AjoutMateriel extends AppCompatActivity {
                     item4.setText("Carte graphique");
                     item5.setText("Stockage");
                     item6.setText("OS");
+
+                    btnadd.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (verif() == true){
+                                PCs.add (new PC(1, marque1.getText().toString(), Integer.parseInt(prix1.getText().toString()), modele1.getText().toString(), couleur1.getText().toString(), usage1.getText().toString(), "PC", Boolean.parseBoolean(item21.getText().toString()), Integer.parseInt(item11.getText().toString()), item31.getText().toString(), item41.getText().toString(), Integer.parseInt(item51.getText().toString()), item61.getText().toString()));
+                            }
+                        }
+                    });
+
                 } else if (materielSelectionne.equals("Souris")) {
                     item1.setText("Filaire");
                     item2.setText("DPI");
@@ -153,6 +211,17 @@ public class AjoutMateriel extends AppCompatActivity {
                     item4.setText("RGB");
                     item5.setText("");
                     item6.setText("");
+
+                    btnadd.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (verif() == true){
+                                Souriss.add (new Souris(1,  marque1.getText().toString(), Integer.parseInt(prix1.getText().toString()), modele1.getText().toString(), couleur1.getText().toString(),  usage1.getText().toString(), "Souris", Boolean.parseBoolean(item21.getText().toString()), Integer.parseInt(item11.getText().toString()), Integer.parseInt(item31.getText().toString()), Boolean.parseBoolean(item41.getText().toString())));
+
+                            }
+                        }
+                    });
+
                 }else {
 
                 }
@@ -175,7 +244,8 @@ public class AjoutMateriel extends AppCompatActivity {
         String item3java = item31.getText().toString();
         String item4java = item41.getText().toString();
         String item5java = item51.getText().toString();
-        if (marquejava.isEmpty() || modeljava.isEmpty() || prixjava.isEmpty() || couleurjava.isEmpty() || usagejava.isEmpty() || item1java.isEmpty() || item2java.isEmpty() || item3java.isEmpty() || item4java.isEmpty() || item5java.isEmpty()) {
+        String item6java = item61.getText().toString();
+        if (marquejava.isEmpty() || modeljava.isEmpty() || prixjava.isEmpty() || couleurjava.isEmpty() || usagejava.isEmpty() || item1java.isEmpty() || item2java.isEmpty() || item3java.isEmpty() || item4java.isEmpty() || item5java.isEmpty() || item6java.isEmpty()) {
             //erreur
             bool =false;
         }else {
@@ -183,6 +253,21 @@ public class AjoutMateriel extends AppCompatActivity {
         }
         return bool;
     }
+
+    private void poursuivre() {
+        marypoppins = new ArrayList<>();
+        if(marypoppins != null) {
+            marypoppins.clear();
+        }
+        marypoppins.add(Ecrans);
+        marypoppins.add(Keyboards);
+        marypoppins.add(Souriss);
+        marypoppins.add(PCs);
+        Log.d("TAG", "poursuivre: "+ marypoppins);
+        Intent intent = new Intent(AjoutMateriel.this, ListeMateriel.class);
+        intent.putExtra("collectionnouvel", (Serializable) marypoppins);
+        startActivity(intent);
     }
+}
 
 

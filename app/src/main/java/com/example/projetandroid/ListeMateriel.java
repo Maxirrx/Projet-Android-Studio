@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +21,8 @@ import java.util.stream.Collectors;
 public class ListeMateriel extends AppCompatActivity {
 
     private ListView listViewArticles;
-    private ArrayList<Materiel> Type;
+    private ArrayList<?> Type;
+    private List<List<?>> marypoppins;
     private Button buttonAjout1;
 
 
@@ -37,20 +39,24 @@ public class ListeMateriel extends AppCompatActivity {
     private void initialisation() {
         listViewArticles = (ListView) findViewById(R.id.listViewArticles);
         buttonAjout1 = (Button) findViewById(R.id.buttonAjout1);
-        if (getIntent().getSerializableExtra("collection") == null) {
-            Type = new ArrayList<Materiel>();
-        } else {
-            Type = (ArrayList<Materiel>) getIntent().getSerializableExtra("collection");
+        if((getIntent().getSerializableExtra("collectionnouvel") == null)) {
+            marypoppins = (List<List<?>>) getIntent().getSerializableExtra("collection");
+        }
+            else if((getIntent().getSerializableExtra("collectionnouvel") != null)){
+            marypoppins = (List<List<?>>) getIntent().getSerializableExtra("collectionnouvel");
+            }else{
+            marypoppins = (List<List<?>>) getIntent().getSerializableExtra("collection");
+        }
             List<String> ref = new ArrayList<>();
-            for (int i = 0; i < Type.size(); i++) {
-                List<?> sousliste = (List<?>) Type.get(i);
+            for (int i = 0; i < marypoppins.size(); i++) {
+                List<?> sousliste = (List<?>) marypoppins.get(i);
                 for(int j = 0; j < sousliste.size(); j++){
                     Materiel matos = (Materiel) sousliste.get(j);
                     String model = matos.getModele();
                     ref.add(model);
                 }
             }
-            Log.d("TAG", "initialisation: " + ref);
+
 
             ArrayAdapter adp = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ref.stream().collect(Collectors.toList()));
             listViewArticles.setAdapter(adp);
@@ -60,10 +66,10 @@ public class ListeMateriel extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent suivant = new Intent(ListeMateriel.this, AjoutMateriel.class);
-                    suivant.putExtra("collection2", Type);
+                    suivant.putExtra("collection2", (Serializable) marypoppins);
                     startActivity(suivant);
                 }
             });
         }
     }
-}
+
