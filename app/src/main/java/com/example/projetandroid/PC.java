@@ -9,12 +9,12 @@ public class PC extends Materiel{
     private String os;
 
 
-    public PC(int idMat, String marque, int prix, String modele, String couleur, String usage, boolean portabilite, String processeur, int ram, String cartegraphique, String cartemere, int stockage, String os) {
-        super(idMat, marque, prix, modele, couleur, usage);
+    public PC(int idMat, String marque, int prix, String modele, String couleur, String usage, String cequecest, boolean portabilite, int ram, String cartegraphique, String processeur, int stockage, String os) {
+        super(idMat, marque, prix, modele, couleur, usage, cequecest);
         this.portabilite = portabilite;
-        this.processeur = processeur;
         this.ram = ram;
         this.cartegraphique = cartegraphique;
+        this.processeur = processeur;
         this.stockage = stockage;
         this.os = os;
     }

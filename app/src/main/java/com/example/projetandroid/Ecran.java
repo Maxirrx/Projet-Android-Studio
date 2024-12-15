@@ -7,10 +7,10 @@ public class Ecran extends Materiel{
     private boolean incurve;
     private String resolution;
 
-    public Ecran(int idMat, String marque, int prix, String modele, String couleur, String usage, String taille, int frequence, int latence, boolean incurve, String resolution) {
-        super(idMat, marque, prix, modele, couleur, usage);
-        this.taille = taille;
+    public Ecran(int idMat, String marque, int prix, String modele, String couleur, String usage, String cequecest, int frequence, String taille, int latence, boolean incurve, String resolution) {
+        super(idMat, marque, prix, modele, couleur, usage, cequecest);
         this.frequence = frequence;
+        this.taille = taille;
         this.latence = latence;
         this.incurve = incurve;
         this.resolution = resolution;
