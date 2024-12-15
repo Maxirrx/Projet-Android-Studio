@@ -222,8 +222,6 @@ public class AjoutMateriel extends AppCompatActivity {
                         }
                     });
 
-                }else {
-
                 }
             }
             @Override
