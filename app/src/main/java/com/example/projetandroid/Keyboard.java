@@ -1,6 +1,8 @@
 package com.example.projetandroid;
 
-public class Keyboard extends Materiel{
+import java.io.Serializable;
+
+public class Keyboard extends Materiel implements Serializable {
     private String type;
     private boolean rgb;
     private boolean tkl;
@@ -57,4 +59,20 @@ public class Keyboard extends Materiel{
     }
 
 
+    @Override
+    public String toString() {
+        return "Keyboard{" +
+                ", cequecest='" + getCequecest() + '\'' +
+                ", marque='" + getMarque() + '\'' +
+                ", prix=" + getPrix() +
+                ", modele='" + getModele() + '\'' +
+                ", couleur='" + getCouleur() + '\'' +
+                ", usage='" + getUsage() + '\'' +
+                "type='" + type + '\'' +
+                ", rgb=" + rgb +
+                ", tkl=" + tkl +
+                ", mecanique=" + mecanique +
+                ", filaire=" + filaire +
+                '}';
+    }
 }
