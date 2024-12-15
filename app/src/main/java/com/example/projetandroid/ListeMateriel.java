@@ -70,6 +70,32 @@ public class ListeMateriel extends AppCompatActivity {
                     startActivity(suivant);
                 }
             });
+
+        listViewArticles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int selectedItem = position;
+                Log.d("TAG", "onItemClick: "+ selectedItem);
+                int conteur = 0;
+                    for (int i = 0; i < marypoppins.size(); i++) {
+                        List<?> sousliste = (List<?>) marypoppins.get(i);
+                        for(int j = 0; j < sousliste.size(); j++){
+
+                            if(conteur == selectedItem) {
+                                Materiel matosexpat = (Materiel) sousliste.get(j);
+                                Log.d("sdf", "onItemClick: "+ matosexpat);
+                                Intent suivant = new Intent(ListeMateriel.this, DetailMatos.class);
+                                suivant.putExtra("collectiondetail", (Serializable) matosexpat);
+                                startActivity(suivant);
+                            }
+                            conteur ++;
+
+                        }
+
+                    }
+
+            }
+        });
         }
     }
 
