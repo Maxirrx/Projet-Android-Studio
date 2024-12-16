@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/backgroundo"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,78 +8,107 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textViewtitre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="112dp"
-        android:text="@string/titre"
-        android:textSize="60px"
+    <!-- Image de Profil -->
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewbvn" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextnom"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="101dp"
-        android:layout_marginTop="151dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="24dp"
-        android:ems="10"
-        android:hint="@string/log"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextmdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewtitre"
-        app:layout_constraintVertical_bias="1.0" />
-
+    <!-- Titre -->
     <TextView
         android:id="@+id/textViewbvn"
+        android:fontFamily="@font/za"
+        android:textColor="@color/background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="173dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="180dp"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/bvn"
         android:textSize="90px"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintTop_toBottomOf="@id/image2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-
-    <EditText
-        android:id="@+id/editTextmdp"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="101dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="80dp"
-        android:ems="10"
-        android:hint="@string/mdp"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/buttonconnexion"
+    <!-- Bloc de Connexion -->
+    <LinearLayout
+        android:id="@+id/loginBloc"
+        android:layout_width="372dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/accueil_background"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewbvn">
 
-    <Button
-        android:id="@+id/buttonconnexion"
-        android:layout_width="407dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="160dp"
-        android:text="@string/btn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <!-- Titre du Bloc -->
+        <TextView
+            android:id="@+id/textViewtitre"
+            android:fontFamily="@font/za"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/titre"
+            android:textColor="@color/backgroundo"
+            android:textSize="60px" />
+
+        <!-- Champ Username -->
+        <EditText
+            android:id="@+id/editTextnom"
+            android:fontFamily="@font/za"
+            android:layout_width="219dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="15dp"
+            android:hint="@string/log"
+            android:inputType="text"
+            android:paddingStart="30dp"
+            android:textColorHint="@color/backgroundo"
+            android:textSize="20dp" />
+
+        <!-- Champ Password -->
+        <EditText
+            android:id="@+id/editTextmdp"
+            android:fontFamily="@font/za"
+            android:layout_width="219dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="15dp"
+            android:hint="@string/mdp"
+            android:inputType="textPassword"
+            android:paddingStart="30dp"
+            android:textColorHint="@color/backgroundo"
+            android:textSize="20dp" />
+
+        <!-- Bouton de Connexion -->
+        <Button
+            android:id="@+id/buttonconnexion"
+            android:fontFamily="@font/zo"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/btn"
+            android:textColor="@color/backgroundo"
+            android:textSize="20dp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

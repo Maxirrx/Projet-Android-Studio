@@ -192,7 +192,7 @@ public class DetailMatos extends AppCompatActivity {
                 this.image.setImageResource(R.drawable.deathstalker);
             }
             else if (((Ecran) matosexpat).getModele().equals("Odyssey G6")){
-                this.image.setImageResource(R.drawable.g6);
+                this.image.setImageResource(R.drawable.g5);
             }
             else if (((Ecran) matosexpat).getModele().equals("Odyssey G5")){
                 this.image.setImageResource(R.drawable.g5);
@@ -220,11 +220,12 @@ public class DetailMatos extends AppCompatActivity {
 
                             List<?>souslistesuprem = (List<?>) marypoppins.get(i);
                             souslistesuprem.remove(j);
+                            Log.d("qskdfkqjsdf", "onClick: " + souslistesuprem);
                             Intent suivant = new Intent(DetailMatos.this, ListeMateriel.class);
                             suivant.putExtra("collectionnouvel", (Serializable) marypoppins);
                             startActivity(suivant);
-                            Log.d("TAG", "onClick: "+ marypoppins.get(i).get(j));
-                            break;
+
+
 
                         }
                         conteurnew++;
