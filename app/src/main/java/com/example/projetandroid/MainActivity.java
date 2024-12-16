@@ -22,8 +22,8 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText edtLogin;
-    private EditText edtPassword;
+    private EditText editTextnom;
+    private EditText editTextmdp;
     private Button buttonConnexion;
     private ArrayList<Utilisateur> mesUtilisateurs;
     private List<List<?>> marypoppins;
@@ -41,15 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
         initUser();
         initMateriel();
-        edtLogin = (EditText) findViewById(R.id.editTextnom);
-        edtPassword = (EditText) findViewById(R.id.editTextmdp);
+        editTextnom = (EditText) findViewById(R.id.editTextnom);
+        editTextmdp = (EditText) findViewById(R.id.editTextmdp);
         buttonConnexion = (Button) findViewById(R.id.buttonconnexion);
 
         buttonConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String login = edtLogin.getText().toString();
-                String mdp = edtPassword.getText().toString();
+                String login = editTextnom.getText().toString();
+                String mdp = editTextmdp.getText().toString();
                 if (controle(login, mdp)) {
                     Intent intent = new Intent(MainActivity.this, ListeMateriel.class);
                     intent.putExtra("collection", (Serializable) marypoppins);
