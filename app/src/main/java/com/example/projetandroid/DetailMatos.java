@@ -39,6 +39,7 @@ public class DetailMatos extends AppCompatActivity {
     private ImageView image;
     private Object matosexpat;
     private TextView prix1;
+    private int indexe;
 
     private List<List<?>> marypoppins;
 
@@ -74,8 +75,8 @@ public class DetailMatos extends AppCompatActivity {
         image = (android.widget.ImageView) findViewById(R.id.image);
 
 
-        final int[] indexe = {(int) getIntent().getSerializableExtra("indexe")};
         marypoppins = (List<List<?>>) getIntent().getSerializableExtra("collectiontotal");
+        indexe = Integer.parseInt(String.valueOf( getIntent().getSerializableExtra("indexe")));
 
 
 
@@ -178,6 +179,31 @@ public class DetailMatos extends AppCompatActivity {
             item51.setText("");
             item61.setText("");
 
+            if (((Souris) matosexpat).getModele().equals("naga") ){
+                this.image.setImageResource(R.drawable.naga);
+            }
+            else if (((Souris) matosexpat).getModele().equals("M185")){
+                this.image.setImageResource(R.drawable.m);
+            }
+            else if (((Keyboard) matosexpat).getModele().equals("K650")){
+                this.image.setImageResource(R.drawable.k650);
+            }
+            else if (((Keyboard) matosexpat).getModele().equals("deathtalker")){
+                this.image.setImageResource(R.drawable.deathstalker);
+            }
+            else if (((Ecran) matosexpat).getModele().equals("Odyssey G6")){
+                this.image.setImageResource(R.drawable.g6);
+            }
+            else if (((Ecran) matosexpat).getModele().equals("Odyssey G5")){
+                this.image.setImageResource(R.drawable.g5);
+            }
+            else if (((PC) matosexpat).getModele().equals("m16 R2")){
+                this.image.setImageResource(R.drawable.alienw);
+            }
+            else if (((PC) matosexpat).getModele().equals("PavilionPlus 14-ey0018nf")){
+                this.image.setImageResource(R.drawable.pc2);
+            }
+
         }
         btnsupp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,18 +212,28 @@ public class DetailMatos extends AppCompatActivity {
                 for (int i = 0; i < marypoppins.size(); i++) {
                     List<?> sousliste = (List<?>) marypoppins.get(i);
                     for(int j = 0; j < sousliste.size(); j++){
+                        Log.d("i", "onClick: " +i);
+                        Log.d("j", "onClick: "+j);
+                        Log.d("ind", "onClick: "+indexe);
+                        Log.d("cont", "onClick: "+conteurnew);
+                        if(conteurnew >= indexe) {
 
-                        if(indexe[0] == conteurnew) {
-                            marypoppins.remove(indexe[0]);
-                            Log.d("sdf", "onItemClick: "+ marypoppins);
+                            List<?>souslistesuprem = (List<?>) marypoppins.get(i);
+                            souslistesuprem.remove(j);
                             Intent suivant = new Intent(DetailMatos.this, ListeMateriel.class);
                             suivant.putExtra("collectionnouvel", (Serializable) marypoppins);
                             startActivity(suivant);
+                            Log.d("TAG", "onClick: "+ marypoppins.get(i).get(j));
+                            break;
+
                         }
-                        indexe[0]++;
-
+                        conteurnew++;
+                    }if(conteurnew -1 == indexe) {
+                        break;
                     }
-
+                    if(conteurnew -1 == indexe) {
+                        break;
+                    }
                 }
 
             }
