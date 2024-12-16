@@ -111,17 +111,17 @@ public class DetailMatos extends AppCompatActivity {
             item5.setText("Filaire");
             item6.setText("");
 
-            marque1.setText(((Ecran) matosexpat).getMarque());
-            prix1.setText(String.valueOf(((Ecran) matosexpat).getPrix()));
-            couleur1.setText(((Ecran) matosexpat).getCouleur());
-            modele1.setText(((Ecran) matosexpat).getModele());
-            usage1.setText(((Ecran) matosexpat).getUsage());
+            marque1.setText(((Keyboard) matosexpat).getMarque());
+            prix1.setText(String.valueOf(((Keyboard) matosexpat).getPrix()));
+            couleur1.setText(((Keyboard) matosexpat).getCouleur());
+            modele1.setText(((Keyboard) matosexpat).getModele());
+            usage1.setText(((Keyboard) matosexpat).getUsage());
 
-            item11.setText("Taille");
-            item21.setText("Fréquence");
-            item31.setText("Latence");
-            item41.setText("Incurvé");
-            item51.setText("Résolution");
+            item11.setText(((Keyboard) matosexpat).getType());
+            item21.setText(((Keyboard) matosexpat).isRgb() ? "Oui" : "Non");
+            item31.setText(((Keyboard) matosexpat).isTkl() ? "Oui" : "Non");
+            item41.setText(((Keyboard) matosexpat).isMecanique() ? "Oui" : "Non");
+            item51.setText(((Keyboard) matosexpat).isFilaire() ? "Oui" : "Non");
             item61.setText("");
 
 
@@ -134,18 +134,18 @@ public class DetailMatos extends AppCompatActivity {
             item5.setText("Stockage");
             item6.setText("OS");
 
-            marque1.setText(((Ecran) matosexpat).getMarque());
-            prix1.setText(String.valueOf(((Ecran) matosexpat).getPrix()));
-            couleur1.setText(((Ecran) matosexpat).getCouleur());
-            modele1.setText(((Ecran) matosexpat).getModele());
-            usage1.setText(((Ecran) matosexpat).getUsage());
+            marque1.setText(((PC) matosexpat).getMarque());
+            prix1.setText(String.valueOf(((PC) matosexpat).getPrix()));
+            couleur1.setText(((PC) matosexpat).getCouleur());
+            modele1.setText(((PC) matosexpat).getModele());
+            usage1.setText(((PC) matosexpat).getUsage());
 
-            item11.setText("Taille");
-            item21.setText("Fréquence");
-            item31.setText("Latence");
-            item41.setText("Incurvé");
-            item51.setText("Résolution");
-            item61.setText("");
+            item11.setText(((PC) matosexpat).isPortabilite() ? "Oui" : "Non");
+            item21.setText(((PC) matosexpat).getProcesseur());
+            item31.setText(((PC) matosexpat).getRam() + "GO");
+            item41.setText(((PC) matosexpat).getCartegraphique());
+            item51.setText(((PC) matosexpat).getStockage() + "GO");
+            item61.setText(((PC) matosexpat).getOs());
 
 
         } else if (matosexpat instanceof Souris) {
@@ -156,17 +156,17 @@ public class DetailMatos extends AppCompatActivity {
             item5.setText("");
             item6.setText("");
 
-            marque1.setText(((Ecran) matosexpat).getMarque());
-            prix1.setText(String.valueOf(((Ecran) matosexpat).getPrix()));
-            couleur1.setText(((Ecran) matosexpat).getCouleur());
-            modele1.setText(((Ecran) matosexpat).getModele());
-            usage1.setText(((Ecran) matosexpat).getUsage());
+            marque1.setText(((Souris) matosexpat).getMarque());
+            prix1.setText(String.valueOf(((Souris) matosexpat).getPrix()));
+            couleur1.setText(((Souris) matosexpat).getCouleur());
+            modele1.setText(((Souris) matosexpat).getModele());
+            usage1.setText(((Souris) matosexpat).getUsage());
 
-            item11.setText("Taille");
-            item21.setText("Fréquence");
-            item31.setText("Latence");
-            item41.setText("Incurvé");
-            item51.setText("Résolution");
+            item11.setText(((Souris) matosexpat).isFilaire() ? "Oui" : "Non");
+            item21.setText(String.valueOf(((Souris) matosexpat).getDpi()));
+            item31.setText(String.valueOf(((Souris) matosexpat).getNbrBtn()));
+            item41.setText(((Souris) matosexpat).isRgb() ? "Oui" : "Non");
+            item51.setText("");
             item61.setText("");
 
         }
