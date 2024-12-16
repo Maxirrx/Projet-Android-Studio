@@ -1,5 +1,6 @@
 package com.example.projetandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class DetailMatos extends AppCompatActivity {
@@ -33,10 +35,12 @@ public class DetailMatos extends AppCompatActivity {
     private TextView modele;
     private TextView marque1;
     private Button btnmenu;
+    private Button btnsupp;
     private ImageView image;
     private Object matosexpat;
     private TextView prix1;
 
+    private List<List<?>> marypoppins;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class DetailMatos extends AppCompatActivity {
     }
 
     private void initilialisation() {
+        btnsupp = (android.widget.Button) findViewById(R.id.btnsupp);
         couleur1 = (android.widget.TextView) findViewById(R.id.couleur1);
         modele1 = (android.widget.TextView) findViewById(R.id.modele1);
         usage = (android.widget.TextView) findViewById(R.id.usage);
@@ -67,6 +72,10 @@ public class DetailMatos extends AppCompatActivity {
         prix1 = (android.widget.TextView) findViewById(R.id.prix1);
         btnmenu = (android.widget.Button) findViewById(R.id.btnmenu);
         image = (android.widget.ImageView) findViewById(R.id.image);
+
+
+        final int[] indexe = {(int) getIntent().getSerializableExtra("indexe")};
+        marypoppins = (List<List<?>>) getIntent().getSerializableExtra("collectiontotal");
 
 
 
@@ -170,6 +179,29 @@ public class DetailMatos extends AppCompatActivity {
             item61.setText("");
 
         }
+        btnsupp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int conteurnew = 0;
+                for (int i = 0; i < marypoppins.size(); i++) {
+                    List<?> sousliste = (List<?>) marypoppins.get(i);
+                    for(int j = 0; j < sousliste.size(); j++){
+
+                        if(indexe[0] == conteurnew) {
+                            marypoppins.remove(indexe[0]);
+                            Log.d("sdf", "onItemClick: "+ marypoppins);
+                            Intent suivant = new Intent(DetailMatos.this, ListeMateriel.class);
+                            suivant.putExtra("collectionnouvel", (Serializable) marypoppins);
+                            startActivity(suivant);
+                        }
+                        indexe[0]++;
+
+                    }
+
+                }
+
+            }
+        });
    }
 }
 

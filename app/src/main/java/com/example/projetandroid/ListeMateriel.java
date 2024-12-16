@@ -86,6 +86,8 @@ public class ListeMateriel extends AppCompatActivity {
                                 Log.d("sdf", "onItemClick: "+ matosexpat);
                                 Intent suivant = new Intent(ListeMateriel.this, DetailMatos.class);
                                 suivant.putExtra("collectiondetail", (Serializable) matosexpat);
+                                suivant.putExtra("indexe", (Serializable) conteur);
+                                suivant.putExtra("collectiontotal", (Serializable) marypoppins);
                                 startActivity(suivant);
                             }
                             conteur ++;
